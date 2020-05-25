@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Security</title>
+</head>
+<body>
+<h3>
+	<a href="/oauth2/authorization/github" th:href="@{hello}" 
+	th:if="${#httpServletRequest?.remoteUser!=undefined}">
+	Go To Dashboard
+	</a>
+	<a href="/hello" th:href="@{/oauth2/authorization/github}" 
+	th:if="${#httpServletRequest?.remoteUser!=undefined}">
+	Go To GitHub
+	</a>
+	<a href="/hello" th:href="@{/oauth2/authorization/facebook}" 
+	th:if="${#httpServletRequest?.remoteUser!=undefined}">
+	Go To Facebook
+	</a>
+	<a href="/hello" th:href="@{/oauth2/authorization/google}" 
+	th:if="${#httpServletRequest?.remoteUser!=undefined}">
+	Go To Google
+	</a>
+</h3>
+</body>
+</html>
